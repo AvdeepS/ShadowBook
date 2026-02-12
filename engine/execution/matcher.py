@@ -3,7 +3,7 @@ from uuid import uuid4
 
 from engine.core.order import Order
 from engine.core.trade import Trade
-from engine.core.enums import OrderType,OrderSide,OrderStatus
+from engine.core.enums import OrderType,OrderSide, OrderStatus
 from engine.market.tick import MarketTick
 
 class Matcher:
