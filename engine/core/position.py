@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional
+#from typing import Optional
 
 from engine.core.trade import Trade
 from engine.core.enums import OrderSide
