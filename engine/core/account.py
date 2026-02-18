@@ -37,4 +37,3 @@ class Account:
         self.blocked_margin -= amount
         self.cash_balance += amount
         
-        

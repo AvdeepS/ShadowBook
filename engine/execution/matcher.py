@@ -20,10 +20,12 @@ class Matcher:
         
         if order.order_type == OrderType.LIMIT:
             if order.side == OrderSide.BUY and tick.ask <= order.price:
-                return self._create_trade(order, order.price)
+                fill_price = min(tick.ask,order.price)
+                return self._create_trade(order, fill_price)
             
             if order.side == OrderSide.SELL and tick.bid >= order.price:
-                return self._create_trade(order,order.price)
+                fill_price = max(tick.bid,order.price)
+                return self._create_trade(order,fill_price)
             
             return None
         
@@ -38,14 +40,14 @@ class Matcher:
             
             return None
         
-        def _create_trade(self, order: Order, price: float) -> Trade:
-            return Trade(
-                trade_id = str(uuid4()),
-                order_id = order.order_id,
-                symbol = order.symbol,
-                instrument_type = order.instrument_type,
-                side = order.side,
-                quantity = order.remaining_quantity,
-                price = price,
-                source = order.source 
-            )
+    def _create_trade(self, order: Order, price: float) -> Trade:
+        return Trade(
+            trade_id = str(uuid4()),
+            order_id = order.order_id,
+            symbol = order.symbol,
+            instrument_type = order.instrument_type,
+            side = order.side,
+            quantity = order.remaining_quantity(),
+            price = price,
+            source = order.source 
+        )
