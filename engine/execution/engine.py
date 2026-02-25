@@ -27,7 +27,7 @@ class ExecutionEngine:
             trade = self.matcher.match(order,tick)
             
             if trade:
-                trade.append(trade)
+                trades.append(trade)
                 self._process_trade(order,trade)
                 
         return trades

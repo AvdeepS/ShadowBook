@@ -21,7 +21,7 @@ class Portfolio:
     def total_equity(self, price_map: Dict[str,float]) -> float:
         return(
             self.account.cash_balance +
-            self.account.blocked_marhgin +
+            self.account.blocked_margin +
             self.total_unrealized_pnl(price_map)
         )
     

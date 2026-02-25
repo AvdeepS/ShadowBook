@@ -21,7 +21,7 @@ def test_limit_buy_order_fill():
     tick = MarketTick(
         symbol="RIL",
         ltp = 99,
-        tiemstamp= 1,
+        timestamp= 1,
         bid = 97,
         ask = 99
     )
@@ -49,7 +49,7 @@ def test_limit_sell_order_fill():
     tick = MarketTick(
         symbol="RIL",
         ltp = 99,
-        tiemstamp= 1,
+        timestamp= 1,
         bid = 101,
         ask = 103
     )
@@ -58,3 +58,4 @@ def test_limit_sell_order_fill():
     
     assert trade is not None
     assert trade.price == 101
+    

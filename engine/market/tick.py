@@ -9,7 +9,7 @@ class MarketTick:
     ask: float
     ltp: float
     
-    tiemstamp: dt
+    timestamp: dt
     
     def __post_init__(self):
         if self.bid <= 0 or self.ask <0 or self.ltp <= 0:
