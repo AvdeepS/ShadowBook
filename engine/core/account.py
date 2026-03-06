@@ -31,7 +31,7 @@ class Account:
         self.blocked_margin += amount
         
     def release_margin(self, amount:float):
-        if amount > self.block_margin:
+        if amount > self.blocked_margin:
             raise ValueError("Cannot release more margin than blocked")
         
         self.blocked_margin -= amount

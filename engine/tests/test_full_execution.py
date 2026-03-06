@@ -5,7 +5,7 @@ from engine.core.enums import TradeSource,InstrumentType,OrderType, OrderSide
 from engine.market.tick import MarketTick
 from engine.state.portfolio import Portfolio
 
-def test_full_execution():
+def test_full_execution_market_order():
     
     account = Account(initial_capital=1000000)
     engine = ExecutionEngine(account)
@@ -94,4 +94,9 @@ def test_full_execution():
     assert final_equity == 1000100
     
 
+def test_partial_close():
+    ...
+    
+def test_flip_position():
+    ...
     
